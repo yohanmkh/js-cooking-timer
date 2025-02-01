@@ -1,7 +1,7 @@
-const btnBoiled = document.querySelector('#eggs_boiled');
-const btnSoft = document.querySelector('#eggs_soft');
-const btnMedium = document.querySelector('#eggs_medium');
-const btnHard = document.querySelector('#eggs_hard');
+const btnBoiled = document.querySelector('#cookies_boiled');
+const btnSoft = document.querySelector('#cookies_soft');
+const btnMedium = document.querySelector('#cookies_medium');
+const btnHard = document.querySelector('#cookies_hard');
 
 const btnStart = document.querySelector('#start');
 const btnStop = document.querySelector('#stop');
