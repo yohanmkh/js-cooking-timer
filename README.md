@@ -1,6 +1,6 @@
 
 
-![cover](./assets/img/mockup.png)
+
 
 ## About
 
