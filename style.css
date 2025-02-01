@@ -59,28 +59,28 @@ h3 {
   font-size: 30px;
 }
 
-.header_eggs {
+.header_cookies {
   font-family: 'Comfortaa', cursive;
   font-weight: 300;
   font-size: 18px;
   margin: 10px 0 0;
 }
 
-/*----------------------------Buttons eggs-------------------------------*/
-.eggs {
+/*----------------------------Buttons cookies-------------------------------*/
+.cookies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
 }
 
-.eggs_cooked {
+.cookies_cooked {
   display: grid;
   grid-template-rows: 2fr 1fr;
   margin: 0 20px;
   text-align: center;
 }
 
-.eggs_cooked__btn {
+.cookies_cooked__btn {
   padding: 15px 5px;
   margin: 0 0 15px;
   text-align: center;
@@ -94,25 +94,25 @@ h3 {
   font-size: 16px;
 }
 
-.eggs_cooked__btn:hover {
+.cookies_cooked__btn:hover {
   transform: scale(1.1, 1.1);
   box-shadow: 3px 3px 15px 6px rgba(255, 255, 255, 0.69);
   transition: all 1s ease;
 }
 
-#eggs_boiled {
+#cookies_boiled {
   background-color: #E8B87D;
 }
 
-#eggs_soft {
+#cookies_soft {
   background-color: #D17C3A;
 }
 
-#eggs_medium {
+#cookies_medium {
   background-color: #B56917;
 }
 
-#eggs_hard {
+#cookies_hard {
   background-color: #5A3825;
 }
 
@@ -198,7 +198,7 @@ h3 {
 .chosen {
   box-shadow: 1px 1px 15px 6px rgba(100, 192, 97, 0.69);
 }
-#egg-animation {
+#cookie-animation {
   display: none;
   position: fixed;
   bottom: 40%;
@@ -213,7 +213,7 @@ h3 {
 
 }
 
-#egg-animation img {
+#cookie-animation img {
   width: 100px;
   height: auto;
 }
@@ -244,12 +244,12 @@ h3 {
     font-size: 24px;
   }
 
-  .header_eggs {
+    .header_cookies {
     font-size: 16px;
     margin: 10px 10px 0;
   }
 
-  .eggs_cooked {
+    .cookies_cooked {
     margin: 0 10px;
   }
 
@@ -272,16 +272,16 @@ h3 {
     font-size: 22px;
   }
 
-  .eggs {
+    .cookies {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 
-  .eggs_cooked {
+    .cookies_cooked {
     margin: 0 20px 0px;
   }
 
-  .eggs_cooked__btn {
+    .cookies_cooked__btn {
     margin: 0 0 10px;
   }
 
@@ -305,12 +305,12 @@ h3 {
     font-size: 18px;
   }
 
-  .header_eggs {
+    .header_cookies {
     font-size: 14px;
     margin: 10px 0px 0;
   }
 
-  .eggs_cooked {
+    .cookies_cooked {
     margin: 0 10px 10px;
   }
 
