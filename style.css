@@ -5,18 +5,18 @@
 }
 
 body {
-  background-color: #eecc44;
+  background-color: #43476591;
 }
 
 .background {
   position: relative;
   min-height: 100vh;
-  background-color: #000;
+  background-color: #E6CEA0;
 }
 
 .background::before {
   content: '';
-  background-image: url(/assets/img/1.jpg);
+  background-image: url(/assets/img/2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -101,19 +101,19 @@ h3 {
 }
 
 #eggs_boiled {
-  background-color: #fff9ae;
+  background-color: #E8B87D;
 }
 
 #eggs_soft {
-  background-color: #f8ed62;
+  background-color: #D17C3A;
 }
 
 #eggs_medium {
-  background-color: #e9d700;
+  background-color: #B56917;
 }
 
 #eggs_hard {
-  background-color: #dab600;
+  background-color: #5A3825;
 }
 
 .egss_cooked__time {
@@ -197,6 +197,35 @@ h3 {
 
 .chosen {
   box-shadow: 1px 1px 15px 6px rgba(100, 192, 97, 0.69);
+}
+#egg-animation {
+  display: none;
+  position: fixed;
+  bottom: 40%;
+  left: 10px;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 20px;
+  border-radius: 10px;
+
+  animation: bounce 1s infinite alternate ease-in-out;
+
+}
+
+#egg-animation img {
+  width: 100px;
+  height: auto;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /*-----------------------------------Mobile Version--------------------------*/

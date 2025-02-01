@@ -9,121 +9,56 @@ const btnReset = document.querySelector('#reset');
 
 const countdown = document.querySelector('#countdown');
 const player = document.querySelector('#player');
+const eggAnimation = document.querySelector('#egg-animation'); // Egg animation div
 
 let timerID;
-let minutes;
-let seconds;
+let timeRemaining = 0;
 
-let timer3min = 3 * 60;
-let timer6min = 6 * 60;
-let timer8min = 8 * 60;
-let timer11min = 11 * 60;
+// Start timer
+function startTimer(time) {
+  timeRemaining = time;
 
-function timer(time) {
-  //If button Start is pressed, countdown begins.
-  btnStart.addEventListener('click', () => {
-    timerID = setInterval(calculateTime, 1000);
-    btnStart.style.pointerEvents = 'none';
-    btnStop.style.pointerEvents = 'auto';
-  });
+  if (timerID) clearInterval(timerID); // Stop any running timer
 
-  // calculate time
-  function calculateTime() {
-    minutes = Math.floor(time / 60);
-    seconds = time % 60;
+  timerID = setInterval(() => {
+    let minutes = Math.floor(timeRemaining / 60);
+    let seconds = timeRemaining % 60;
 
-    if (seconds < 10) {
-      seconds = '0' + seconds;
-    }
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
+    countdown.textContent = `${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
 
-    countdown.textContent = `${minutes} : ${seconds}`;
-    time--;
-
-    if (time < 0) {
-      time = 0;
-      stopTimer();
+    if (timeRemaining === 0) {
+      clearInterval(timerID);
       countdown.textContent = '00 : 00';
       player.play();
+      showEggAnimation(); // Show animation when done
     }
-  }
+
+    timeRemaining--;
+  }, 1000);
 }
 
-//If button Pause is pressed, countdown paused.
+// Show egg animation when done
+function showEggAnimation() {
+  eggAnimation.style.display = 'block'; // Show the animation
+  eggAnimation.classList.add('animate-egg'); // Add animation class
+}
+
+// Stop timer
 btnStop.addEventListener('click', () => {
-  stopTimer();
-  btnStart.style.pointerEvents = 'auto';
-  btnStop.style.pointerEvents = 'none';
+  clearInterval(timerID);
 });
 
-// Countdown pause
-function stopTimer() {
-  clearInterval(timerID);
-}
-
-// Button Reset
+// Reset timer
 btnReset.addEventListener('click', () => {
   location.reload();
 });
-
-/*--------------Button Boiled-----------------*/
-btnBoiled.addEventListener('click', () => {
-  timer(timer3min);
-  countdown.textContent = `03 : 00`;
-
-  btnBoiled.style.pointerEvents = 'none'; //buttn Boiled is disabled
-  btnBoiled.classList.add('chosen');
-  btnSoft.style.pointerEvents = 'none';
-  btnSoft.classList.add('disabled');
-  btnMedium.style.pointerEvents = 'none';
-  btnMedium.classList.add('disabled');
-  btnHard.style.pointerEvents = 'none';
-  btnHard.classList.add('disabled');
+//start timer
+btnStart.addEventListener('click', () => {
+  startTimer(timeRemaining);
 });
 
-/*--------------Button Soft Boiled-----------------*/
-btnSoft.addEventListener('click', () => {
-  timer(timer6min);
-  countdown.textContent = `06 : 00`;
-
-  btnSoft.classList.add('chosen');
-  btnSoft.style.pointerEvents = 'none'; //buttn Boiled is disabled
-  btnBoiled.style.pointerEvents = 'none';
-  btnBoiled.classList.add('disabled');
-  btnMedium.style.pointerEvents = 'none';
-  btnMedium.classList.add('disabled');
-  btnHard.style.pointerEvents = 'none';
-  btnHard.classList.add('disabled');
-});
-
-// /*--------------Button Medium Boiled-----------------*/
-btnMedium.addEventListener('click', () => {
-  timer(timer8min);
-  countdown.textContent = `08 : 00`;
-
-  btnMedium.classList.add('chosen');
-  btnMedium.style.pointerEvents = 'none'; //buttn Boiled is disabled
-  btnBoiled.style.pointerEvents = 'none';
-  btnBoiled.classList.add('disabled');
-  btnSoft.style.pointerEvents = 'none';
-  btnSoft.classList.add('disabled');
-  btnHard.style.pointerEvents = 'none';
-  btnHard.classList.add('disabled');
-});
-
-// /*--------------Button Hard Boiled-----------------*/
-btnHard.addEventListener('click', () => {
-  timer(timer11min);
-  countdown.textContent = `11 : 00`;
-
-  btnHard.classList.add('chosen');
-  btnHard.style.pointerEvents = 'none'; //buttn Boiled is disabled
-  btnBoiled.style.pointerEvents = 'none';
-  btnBoiled.classList.add('disabled');
-  btnSoft.style.pointerEvents = 'none';
-  btnSoft.classList.add('disabled');
-  btnMedium.style.pointerEvents = 'none';
-  btnMedium.classList.add('disabled');
-});
+// Egg buttons
+btnBoiled.addEventListener('click', () => startTimer(0.1 * 60));
+btnSoft.addEventListener('click', () => startTimer(13 * 60));
+btnMedium.addEventListener('click', () => startTimer(16 * 60));
+btnHard.addEventListener('click', () => startTimer(20 * 60));
