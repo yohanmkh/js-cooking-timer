@@ -9,7 +9,7 @@ const btnReset = document.querySelector('#reset');
 
 const countdown = document.querySelector('#countdown');
 const player = document.querySelector('#player');
-const eggAnimation = document.querySelector('#egg-animation'); // Egg animation div
+const cookieAnimation = document.querySelector('#cookie-animation');// Egg animation div
 
 let timerID;
 let timeRemaining = 0;
@@ -30,17 +30,18 @@ function startTimer(time) {
       clearInterval(timerID);
       countdown.textContent = '00 : 00';
       player.play();
-      showEggAnimation(); // Show animation when done
+      showCookieAnimation(); // Show animation when done
     }
 
     timeRemaining--;
   }, 1000);
 }
 
-// Show egg animation when done
-function showEggAnimation() {
-  eggAnimation.style.display = 'block'; // Show the animation
-  eggAnimation.classList.add('animate-egg'); // Add animation class
+function showCookieAnimation() {
+  cookieAnimation.style.display = 'block';
+  setTimeout(() => {
+    cookieAnimation.style.display = 'none';
+  }, 5000); // Hide animation after 5 seconds
 }
 
 // Stop timer
