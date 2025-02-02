@@ -59,7 +59,7 @@ btnStart.addEventListener('click', () => {
 });
 
 // Egg buttons
-btnBoiled.addEventListener('click', () => startTimer(0.1 * 60));
-btnSoft.addEventListener('click', () => startTimer(13 * 60));
-btnMedium.addEventListener('click', () => startTimer(16 * 60));
-btnHard.addEventListener('click', () => startTimer(20 * 60));
+btnBoiled.addEventListener('click', () => startTimer(10 * 60));
+btnSoft.addEventListener('click', () => startTimer(12 * 60));
+btnMedium.addEventListener('click', () => startTimer(18 * 60));
+btnHard.addEventListener('click', () => startTimer(23 * 60));
