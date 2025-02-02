@@ -70,57 +70,95 @@ h3 {
 .cookies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .cookies_cooked {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  margin: 0 20px;
-  text-align: center;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: 20px 0;
 }
 
+
 .cookies_cooked__btn {
-  padding: 15px 5px;
-  margin: 0 0 15px;
+  width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cookies_cooked__btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .cookie-label-box {
+    width: 100%;
+    padding: 12px 5px;
+    margin: 10px 0;
   text-align: center;
-  border: 1px solid rgb(100, 73, 73);
   border-radius: 50px;
-  box-shadow: 1px 1px 15px 6px rgba(255, 255, 255, 0.69);
-  cursor: pointer;
-  border: 1px solid #fff;
   font-family: 'Comfortaa', cursive;
   font-weight: 500;
   font-size: 16px;
+  box-shadow: 1px 1px 15px 6px rgba(255, 255, 255, 0.69);
+    border: 1px solid #fff;
+}
+.cookie-label-box :hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
-.cookies_cooked__btn:hover {
-  transform: scale(1.1, 1.1);
-  box-shadow: 3px 3px 15px 6px rgba(255, 255, 255, 0.69);
-  transition: all 1s ease;
+.cookie-type-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-#cookies_boiled {
+#cookies_boiled+.cookie-label-box {
   background-color: #E8B87D;
 }
 
-#cookies_soft {
+#cookies_soft+.cookie-label-box {
   background-color: #D17C3A;
 }
 
-#cookies_medium {
+#cookies_medium+.cookie-label-box {
   background-color: #B56917;
 }
 
-#cookies_hard {
+#cookies_hard+.cookie-label-box {
   background-color: #5A3825;
+  color: #fff;
 }
 
 .egss_cooked__time {
   font-family: 'Comfortaa', cursive;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
+  margin-top: 10px;
+  }
+  
+  @media all and (max-width: 400px) {
+    .cookies_cooked__btn {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .cookies_cooked__time {
+      font-size: 12px;
+    }
 }
 
 /*--------------------------------Timer------------------------------------*/
@@ -286,7 +324,12 @@ h3 {
   }
 
   .egss_cooked__time {
-    font-size: 12px;
+    font-family: 'Comfortaa', cursive;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000;
+      margin-top: 5px;
+      text-align: center;
   }
 
   .timer {
